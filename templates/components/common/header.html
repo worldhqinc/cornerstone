@@ -30,16 +30,19 @@
                     <a href="#TODO">Support</a>
                 </li>
                 <li>
-                    <a href="#TODO">My Account</a>
+                    <a href="{{urls.auth.login}}">{{lang 'common.login'}}</a>
                 </li>
             </ul>
         </div>
         <div class="lower-level-navigation">
             <div class="lower-level-content">
                 <div class="logo-with-search-form">
-                    <svg class="header-nav-logo">
-                        <use xlink:href="#icon-duraco-logo-color" />
-                    </svg>
+                    <a href="{{urls.home}}">
+                        <svg class="header-nav-logo">
+                            <use xlink:href="#icon-duraco-logo-color" />
+                        </svg>
+                    </a>
+
                     <form class="nav-form" action="{{urls.search}}">
                         <fieldset class="form-fieldset">
                             <div class="nav-form-field">
@@ -62,7 +65,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#TODO">
+                        <a href="{{urls.cart}}">
                             <svg class="icon-shopping-bag">
                                 <use xlink:href="#icon-shopping-bag"
                             </svg>
