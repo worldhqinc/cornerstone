@@ -11,11 +11,191 @@
 // 2. Re-set the font-size that was reduced to 0 in point 1 for children.
 //
 // -----------------------------------------------------------------------------
+.footer .footer-container {
+    z-index: 0;
+    position: relative;
+    max-width: 1430px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    color: stencilColor("color-white");
+
+    .duraco-logo-background {
+        z-index: -1;
+        position: absolute;
+        right: -70px;
+        bottom: -45px;
+        height: 690px;
+        width: 450px;
+    }
+
+    ul {
+        margin: 0;
+        list-style-type: none;
+    }
+
+    a {
+        display: block;
+        color: stencilColor("color-white");
+        text-decoration: none;
+    }
+
+    .footer-top {
+        padding-bottom: 20px;
+    }
+
+    .footer-nav-logo {
+        width: 160px;
+        height: 50px;
+        color: stencilColor("color-white");
+    }
+
+    .footer-middle {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .footer-pages {
+        display: flex;
+        max-width: 850px;
+        width: 100%;
+    }
+
+    .page-groupings {
+        display: flex;
+        width: 100%;
+        margin-right: -35px;
+        margin-left: -35px;
+    }
+
+    .page-list-grouping {
+        width: calc(25% - 70px);
+        margin-right: 35px;
+        margin-left: 35px;
+    }
+
+    .page-list-title {
+        margin-bottom: 15px;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 23px;
+    }
+
+    .page-list {
+        margin-top: -6px;
+        margin-bottom: -6px;
+    }
+
+    .page-link {
+        margin-top: 6px;
+        margin-bottom: 6px;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .footer-email-social {
+        max-width: 300px;
+        width: 100%;
+        margin-top: -45px;
+    }
+
+    .sign-up-title {
+        max-width: 250px;
+        margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 34px;
+    }
+
+    .footer-email-input {
+        width: 100%;
+        height: 47px;
+        padding: 0 25px;
+        border-radius: 100px;
+        border: none;
+        color: black;
+
+        &::placeholder {
+            font-size: 18px;
+            line-height: 25px;
+            color: black;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .input-with-svg {
+        position: relative;
+
+        .footer-email-input {
+            width: 100%;
+        }
+
+        .envelope-svg {
+
+        }
+    }
+
+    .footer-social-container {
+        margin-top: 25px;
+    }
+
+    .social-links-list {
+        display: flex;
+        margin-right: -10px;
+        margin-left: -10px;
+    }
+
+    .footer-nav-social-item {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .footer-nav-social-logo {
+        width: 22px;
+        height: 21px;
+    }
+
+    .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 20px;
+        border-top: 1px solid #FFFFFF;
+    }
+
+    .privacy-and-terms {
+        display: flex;
+        margin-right: -25px;
+        margin-left: -25px;
+
+        a {
+            margin-right: 25px;
+            margin-left: 25px;
+            text-decoration: underline;
+        }
+    }
+
+}
+
+.footer-slope,
+.footer {
+    background-color: #326195;
+}
+
+.footer-slope {
+    width: 100%;
+    height: 90px;
+    clip-path: polygon(0 0, 100% 90px, 100% 100%, 0% 100%);
+    margin-bottom: -1px;
+}
 
 .footer {
-    background-color: $footer-background;
-    border-top: container("border");
-    padding: spacing("double") 0;
+    // PROPER WAY TO EDIT FOOTER BG COLOR background-color: $footer-background;
+    padding: spacing("single") 70px spacing("double");
 }
 
 .footer-info {
