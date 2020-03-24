@@ -43,14 +43,17 @@
                         </svg>
                     </a>
 
-                    <form class="nav-form" action="{{urls.search}}">
-                        <fieldset class="form-fieldset">
-                            <div class="nav-form-field">
-                                <label class="is-srOnly" for="search_query">{{lang "search.quick_search.input_label"}}</label>
-                                <input class="form-input" data-search-quick name="search_query" id="#TODO-search_query" data-error-message="{{lang 'search.error.empty_field'}}" placeholder="{{lang 'search.quick_search.input_placeholder'}}" autocomplete="off">
-                            </div>
-                        </fieldset>
-                    </form>
+                    <div id="quickSearch" aria-hidden="true" tabindex="-1">
+                        <form class="nav-form" action="{{urls.search}}">
+                            <fieldset class="form-fieldset">
+                                <div class="nav-form-field">
+                                    <label class="is-srOnly" for="search_query">{{lang "search.quick_search.input_label"}}</label>
+                                    <input class="form-input" data-search-quick name="search_query" id="#TODO-search_query" data-error-message="{{lang 'search.error.empty_field'}}" placeholder="{{lang 'search.quick_search.input_placeholder'}}" autocomplete="off">
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+
                 </div>
 
                 <ul class="lower-level-links">
