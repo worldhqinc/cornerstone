@@ -23,8 +23,34 @@
     }
 }
 
+.quickSearchContainer {
+    width: 100%;
+}
+
 .quickSearchResults {
+    z-index: 50;
+    position: absolute;
+    right: 0;
+    left: 0;
+    width: 100%;
     margin-top: spacing("single");
+
+    background-color: #FFFFFF;
+
+    &:after {
+        content: '';
+        width: 100%;
+        height: 120px;
+        background-color: #FFFFFF;
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 120px), 0 100%);
+    }
+
+    .productGrid {
+        max-width: 1430px;
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+    }
 
     @include breakpoint("medium") {
         margin-top: 0;
