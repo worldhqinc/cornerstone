@@ -43,15 +43,16 @@
                         </svg>
                     </a>
 
-                    <div id="quickSearch" aria-hidden="true" tabindex="-1">
+                    <div id="quickSearch" aria-hidden="true" tabindex="-1" data-prevent-quick-search-close>
                         <form class="nav-form" action="{{urls.search}}">
                             <fieldset class="form-fieldset">
                                 <div class="nav-form-field">
                                     <label class="is-srOnly" for="search_query">{{lang "search.quick_search.input_label"}}</label>
-                                    <input class="form-input" data-search-quick name="search_query" id="#TODO-search_query" data-error-message="{{lang 'search.error.empty_field'}}" placeholder="{{lang 'search.quick_search.input_placeholder'}}" autocomplete="off">
+                                    <input class="form-input" data-search-quick name="search_query" id="search_query" data-error-message="{{lang 'search.error.empty_field'}}" placeholder="{{lang 'search.quick_search.input_placeholder'}}" autocomplete="off">
                                 </div>
                             </fieldset>
                         </form>
+                        <section class="quickSearchResults" data-bind="html: results"></section>
                     </div>
 
                 </div>
@@ -144,7 +145,7 @@
     <a href="#" class="mobileMenu-toggle" data-mobile-menu-toggle="menu">
         <span class="mobileMenu-toggleIcon">Toggle menu</span>
     </a>
-    {{> components/common/navigation}}
+    <!--Removed navigation html-->
 
     {{#if page_type '===' 'default'}}
         <h1 class="header-logo header-logo--{{theme_settings.logo-position}}">
