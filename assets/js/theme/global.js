@@ -2,6 +2,7 @@ import './global/jquery-migrate';
 import './common/select-option-plugin';
 import PageManager from './page-manager';
 import quickSearch from './global/quick-search';
+import exploreProducts from './global/explore-products';
 import currencySelector from './global/currency-selector';
 import mobileMenuToggle from './global/mobile-menu-toggle';
 import menu from './global/menu';
@@ -19,6 +20,7 @@ export default class Global extends PageManager {
     onReady() {
         cartPreview(this.context.secureBaseUrl, this.context.cartId);
         quickSearch();
+        exploreProducts();
         currencySelector();
         foundation($(document));
         quickView(this.context);

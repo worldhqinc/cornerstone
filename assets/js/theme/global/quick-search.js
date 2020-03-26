@@ -7,7 +7,7 @@ export default function () {
     const $quickSearchResults = $('.quickSearchResults');
     const $quickSearchDiv = $('#quickSearch');
     const $searchQuery = $('#search_query');
-    const $quickSearchClose = document.getElementById('quickSearchClose');
+    const $headerNavContainer = $('.header-nav-container');
     const stencilDropDownExtendables = {
         hide: () => {
             $searchQuery.trigger('blur');
@@ -37,6 +37,7 @@ export default function () {
             }
 
             $quickSearchResults.html(response);
+            $headerNavContainer.addClass('active-quick-search');
         });
     }, 200);
 
@@ -68,6 +69,7 @@ export default function () {
     // I was unable to reuse the built in 'hide()', built this simple workaround for now.
     $(document).on('click','#quickSearchClose', (event) => {
         event.preventDefault();
+        $headerNavContainer.removeClass('active-quick-search');
         $('#quickSearchNavAndGrid').hide();
     });
 

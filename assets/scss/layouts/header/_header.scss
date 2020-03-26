@@ -41,9 +41,11 @@
 }
 
 .header-nav-container.active-sub-nav {
-
     .lower-level-sub-nav { display: block; }
+}
 
+.header-nav-container.active-sub-nav,
+.header-nav-container.active-quick-search{
     .lower-level-navigation { clip-path: polygon(0 0,100% 0,100% 100%,0 120px); }
 }
 
