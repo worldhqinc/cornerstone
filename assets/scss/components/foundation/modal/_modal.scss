@@ -36,7 +36,8 @@
     }
 }
 
-.modal-close {
+.modal-close,
+#quickSearchClose {
     @include square($reveal-close-height);
     color: stencilColor("icon-color");
     font-size: 26px;

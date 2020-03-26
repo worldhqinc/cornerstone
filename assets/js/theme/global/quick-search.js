@@ -7,6 +7,7 @@ export default function () {
     const $quickSearchResults = $('.quickSearchResults');
     const $quickSearchDiv = $('#quickSearch');
     const $searchQuery = $('#search_query');
+    const $quickSearchClose = document.getElementById('quickSearchClose');
     const stencilDropDownExtendables = {
         hide: () => {
             $searchQuery.trigger('blur');
@@ -52,6 +53,7 @@ export default function () {
 
     // Catch the submission of the quick-search
     $quickSearchDiv.on('submit', event => {
+
         const searchQuery = $(event.currentTarget).find('input').val();
 
         if (searchQuery.length === 0) {
@@ -60,4 +62,13 @@ export default function () {
 
         return true;
     });
+
+    // Workaround to close the Quick Search Results.
+    // Our design required breaking up the built-in header nav search elements.
+    // I was unable to reuse the built in 'hide()', built this simple workaround for now.
+    $(document).on('click','#quickSearchClose', (event) => {
+        event.preventDefault();
+        $('#quickSearchNavAndGrid').hide();
+    });
+
 }

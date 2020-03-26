@@ -1,10 +1,15 @@
+<div id="quickSearchNavAndGrid">
 {{#if product_results.products}}
-    <a class="modal-close" aria-label="{{lang 'common.close'}}" data-drop-down-close role="button">
-        <span aria-hidden="true">&#215;</span>
-    </a>
-    <p class="quickSearchMessage">
-        {{lang 'search.results.quick_count' count=pagination.product_results.total search_query=forms.search.query}}
-    </p>
+    <div class="quickSearchResults-nav">
+        <p class="quickSearchMessage">
+            {{lang 'search.results.quick_count' count=pagination.product_results.total search_query=forms.search.query}}
+        </p>
+
+        <button id="quickSearchClose" role="button">
+            <span>&#215;</span>
+        </button>
+    </div>
+
     <ul class="productGrid" {{#if settings.data_tag_enabled}} data-list-name="Quick Search Results" {{/if}}>
 
         {{#each product_results.products}}
@@ -14,7 +19,15 @@
         {{/each}}
     </ul>
 {{else}}
-    <p class="quickSearchMessage">
-        {{lang 'search.results.quick_count' count=pagination.product_results.total search_query=forms.search.query}}
-    </p>
+    <div class="quickSearchResults-nav">
+        <p class="quickSearchMessage">
+            {{lang 'search.results.quick_count' count=pagination.product_results.total search_query=forms.search.query}}
+        </p>
+
+        <button id="quickSearchClose" role="button">
+            <span>&#215;</span>
+        </button>
+    </div>
 {{/if}}
+</div>
+
