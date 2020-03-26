@@ -67,10 +67,23 @@ export default function () {
     // Workaround to close the Quick Search Results.
     // Our design required breaking up the built-in header nav search elements.
     // I was unable to reuse the built in 'hide()', built this simple workaround for now.
-    $(document).on('click','#quickSearchClose', (event) => {
-        event.preventDefault();
-        $headerNavContainer.removeClass('active-quick-search');
-        $('#quickSearchNavAndGrid').hide();
-    });
+    // $(document).on('click','#quickSearchClose', (event) => {
+    //     event.preventDefault();
+    //     $headerNavContainer.removeClass('active-quick-search');
+    //     $('#quickSearchNavAndGrid').hide();
+    // });
 
+    document.addEventListener('click', (event) => {
+        event.preventDefault();
+        let quickSearchClose = document.getElementById('quickSearchClose');
+        let quickSearchNavAndGrid = document.getElementById('quickSearchNavAndGrid');
+
+        let headerNavContainer = document.getElementsByClassName('header-nav-container');
+		let headerClassList = headerNavContainer[0].classList
+
+        if ( quickSearchClose.contains(event.target) ) {
+            headerClassList.remove('active-quick-search');
+            quickSearchNavAndGrid.style.display = 'none';
+        }
+    });
 }
