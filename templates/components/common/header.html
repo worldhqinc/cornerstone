@@ -87,43 +87,30 @@
                 </ul>
                 <div class="product-types-list-container">
                     <ul class="product-types-list">
+                        {{#each categories}}
                         <li class="product-type">
-                            <a href="#TODO">
-                                <img src="/stencil/00000000-0000-0000-0000-000000000001/img/ProductDefault.gif" alt="">
+                            <a href="{{url}}">
+                                {{#if image}}
+                                    {{> components/common/responsive-img
+                                        image=image
+                                        fallback_size=theme_settings.zoom_size
+                                        lazyload=theme_settings.lazyload_mode
+                                        class="category-header-image"
+                                    }}
+                                {{else}}
+                                 <img src="/stencil/00000000-0000-0000-0000-000000000001/img/ProductDefault.gif" alt="">
+                                {{/if}}
                                 <div class="product-type-label">
-                                    Foam Tapes
+                                    {{name}}
                                 </div>
                             </a>
                         </li>
+                        {{/each}}
                         <li class="product-type">
                             <a href="#TODO">
-                                <img src="/stencil/00000000-0000-0000-0000-000000000001/img/ProductDefault.gif" alt="#TODO">
+
                                 <div class="product-type-label">
-                                    Product Type Name
-                                </div>
-                            </a>
-                        </li>
-                        <li class="product-type">
-                            <a href="#TODO">
-                                <img src="/stencil/00000000-0000-0000-0000-000000000001/img/ProductDefault.gif" alt="#TODO">
-                                <div class="product-type-label">
-                                    Product Type Name
-                                </div>
-                            </a>
-                        </li>
-                        <li class="product-type">
-                            <a href="#TODO">
-                                <img src="/stencil/00000000-0000-0000-0000-000000000001/img/ProductDefault.gif" alt="#TODO">
-                                <div class="product-type-label">
-                                    Product Type Name
-                                </div>
-                            </a>
-                        </li>
-                        <li class="product-type">
-                            <a href="#TODO">
-                                <img src="/stencil/00000000-0000-0000-0000-000000000001/img/ProductDefault.gif" alt="#TODO">
-                                <div class="product-type-label">
-                                    Product Type Name
+                                    HARDCODED Foam Tapes
                                 </div>
                             </a>
                         </li>
