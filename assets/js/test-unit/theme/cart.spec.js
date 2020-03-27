@@ -41,7 +41,7 @@ var $dom = $('<table class="cart" data-cart-quantity="2">\
         </tr>\
     </thead>\
     <tbody class="cart-list">\
-            <tr class="HERE-spec-js cart-item" data-item-row="">\
+            <tr class="cart-item" data-item-row="">\
                 <td class="cart-item-block cart-item-figure">\
                         <img class="cart-item-image lazyautosizes lazyloaded" data-sizes="auto" src="www.example.com" data-src="www.example.com" alt="[Sample] product" title="[Sample] product">\
                 </td>\
