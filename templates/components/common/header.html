@@ -10,7 +10,6 @@
 </div>
 {{/if}}
 <header class="header" role="banner">
-<!-- STATIC HEADER FOR PRACTICE BELOW -->
     <section class="header-nav-container">
         <div class="top-level-pages">
             <ul>
@@ -57,16 +56,25 @@
                             Customize
                         </a>
                     </li>
-                    <li>
-                        <a href="{{urls.cart}}">
-                            <svg class="icon-shopping-bag">
-                                <use xlink:href="#icon-shopping-bag"
-                            </svg>
+                    <li class="navUser-item navUser-item--cart">
+                        <a
+                        class="navUser-action"
+                        data-cart-preview
+                        data-dropdown="cart-preview-dropdown"
+                        data-options="align:right"
+                        href="{{urls.cart}}">
+                            <span class="navUser-item-cartLabel">
+                                <svg class="icon-shopping-bag">
+                                    <use xlink:href="#icon-shopping-bag">
+                                </svg>
+                            </span>
+                            <span class="countPill cart-quantity"></span>
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
+
         <section class="quickSearchResults-container" data-bind="html: results">
             <div class="quickSearchResults"></div>
         </section>
@@ -114,25 +122,5 @@
             </div>
         </section>
     </section>
-<!-- STATIC HEADER FOR PRACTICE ABOVE -->
-
-
-    <a href="#" class="mobileMenu-toggle" data-mobile-menu-toggle="menu">
-        <span class="mobileMenu-toggleIcon">Toggle menu</span>
-    </a>
-    <!--Removed navigation html-->
-
-    {{#if page_type '===' 'default'}}
-        <h1 class="header-logo header-logo--{{theme_settings.logo-position}}">
-            {{> components/common/store-logo}}
-        </h1>
-    {{else}}
-        <div class="header-logo header-logo--{{theme_settings.logo-position}}">
-            {{> components/common/store-logo}}
-        </div>
-    {{/if}}
-    <div class="navPages-container" id="menu" data-menu>
-        {{> components/common/navigation-menu}}
-    </div>
 </header>
 {{{region name="header_bottom"}}}

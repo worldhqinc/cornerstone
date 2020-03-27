@@ -65,8 +65,6 @@ export default function () {
     });
 
     document.addEventListener('click', (event) => {
-        event.preventDefault();
-
         let quickSearchClose = document.getElementById('quickSearchClose');
         let quickSearchNavAndGrid = document.getElementById('quickSearchNavAndGrid');
 
@@ -88,6 +86,5 @@ export default function () {
                 quickSearchNavAndGrid.style.display = 'none';
             }
         }
-
     });
 }

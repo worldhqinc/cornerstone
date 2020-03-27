@@ -25,6 +25,7 @@ export default function (secureBaseUrl, cartId) {
     });
 
     $cart.on('click', event => {
+        console.log('event from cart? ', event);
         const options = {
             template: 'common/cart-preview',
         };
