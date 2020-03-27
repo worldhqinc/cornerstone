@@ -41,7 +41,7 @@ var $dom = $('<table class="cart" data-cart-quantity="2">\
         </tr>\
     </thead>\
     <tbody class="cart-list">\
-            <tr class="cart-item" data-item-row="">\
+            <tr class="HERE-spec-js cart-item" data-item-row="">\
                 <td class="cart-item-block cart-item-figure">\
                         <img class="cart-item-image lazyautosizes lazyloaded" data-sizes="auto" src="www.example.com" data-src="www.example.com" alt="[Sample] product" title="[Sample] product">\
                 </td>\
@@ -91,32 +91,32 @@ var $dom = $('<table class="cart" data-cart-quantity="2">\
 c.onReady();
 
 describe('cartUpdate', () => {
-    it('should INCRIMENT qty', () => {	
+    it('should INCRIMENT qty', () => {
 		dataSpy
 		dataSpy('inc');
 		spyOn(jQuery.fn, 'val').and.returnValue(2);
 		c.cartUpdate($dom);
-		
-		expect(UpdateSpy).toHaveBeenCalledWith('11111', 3, jasmine.any(Function));  
+
+		expect(UpdateSpy).toHaveBeenCalledWith('11111', 3, jasmine.any(Function));
 	});
 
-    it('should DECREMENT qty', () => {	
+    it('should DECREMENT qty', () => {
 		dataSpy
 		dataSpy('dec');
 		spyOn(jQuery.fn, 'val').and.returnValue(2);
 		c.cartUpdate($dom);
-		
-		expect(UpdateSpy).toHaveBeenCalledWith('11111', 1, jasmine.any(Function));  
+
+		expect(UpdateSpy).toHaveBeenCalledWith('11111', 1, jasmine.any(Function));
 	});
 });
 
 describe('cartUpdateQtyTextChange', () => {
-    it('should CHANGE qty completly based on the cart-item-qty-input', () => {	
+    it('should CHANGE qty completly based on the cart-item-qty-input', () => {
 		dataSpy
 		dataSpy('manualQtyChange');
 		spyOn(jQuery.fn, 'val').and.returnValue(5, 2);
 		c.cartUpdateQtyTextChange($dom);
-		
-		expect(UpdateSpy).toHaveBeenCalledWith('11111', 5, jasmine.any(Function));  
+
+		expect(UpdateSpy).toHaveBeenCalledWith('11111', 5, jasmine.any(Function));
 	});
 });
