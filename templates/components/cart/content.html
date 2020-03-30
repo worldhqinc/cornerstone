@@ -1,11 +1,4 @@
 <table class="cart" data-cart-quantity="{{cart.quantity}}">
-    <thead class="cart-header">
-        <tr>
-            <th class="cart-header-item" colspan="2">{{lang 'cart.checkout.item'}}</th>
-            <th class="cart-header-item cart-header-quantity">{{lang 'cart.checkout.quantity'}}</th>
-            <th class="cart-header-item">{{lang 'cart.checkout.total'}}</th>
-        </tr>
-    </thead>
     <tbody class="cart-list">
         {{#each cart.items}}
             <tr class="cart-item" data-item-row>
@@ -115,6 +108,10 @@
                     {{else}}
                         {{> components/common/login-for-pricing}}
                     {{/or}}
+
+                </td>
+
+                <td class="cart-item-block cart-item-removal">
                     {{#if can_modify}}
                         <a class="cart-remove icon" data-cart-itemid="{{id}}" href="#" data-confirm-delete="{{lang 'cart.confirm_delete'}}">
                             <svg><use xlink:href="#icon-close"></use></svg>

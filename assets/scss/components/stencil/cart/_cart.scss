@@ -323,20 +323,6 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     margin-bottom: $cart-item-spacing;
     text-align: right;
     width: 100%;
-
-    @include breakpoint("small") {
-        float: right;
-        width: grid-calc(9, $total-columns);
-    }
-
-    @include breakpoint("medium") {
-        margin-bottom: spacing("base");
-        width: grid-calc(7, $total-columns);
-    }
-
-    @include breakpoint("large") {
-        width: grid-calc(5, $total-columns);
-    }
 }
 
 .cart-total {
