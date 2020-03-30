@@ -2,7 +2,6 @@
     <thead class="cart-header">
         <tr>
             <th class="cart-header-item" colspan="2">{{lang 'cart.checkout.item'}}</th>
-            <th class="cart-header-item">{{lang 'cart.checkout.price'}}</th>
             <th class="cart-header-item cart-header-quantity">{{lang 'cart.checkout.quantity'}}</th>
             <th class="cart-header-item">{{lang 'cart.checkout.total'}}</th>
         </tr>
@@ -33,7 +32,7 @@
                     {{/if}}
 
                     {{#if options}}
-                        <dl class="definitionList">
+                        <!-- <dl class="definitionList">
                             {{#each options}}
                                 <dt class="definitionList-key">{{name}}:</dt>
                                 <dd class="definitionList-value">
@@ -44,7 +43,7 @@
                                     {{/if}}
                                 </dd>
                             {{/each}}
-                        </dl>
+                        </dl> -->
 
                         <a href="#" data-item-edit="{{id}}">{{lang 'cart.checkout.change'}}</a>
                     {{/if}}
@@ -66,17 +65,7 @@
                     {{/if}}
 
                 </td>
-                <td class="cart-item-block cart-item-info">
-                    <span class="cart-item-label">{{lang 'cart.checkout.price'}}</span>
-                    {{#or ../customer (if ../theme_settings.restrict_to_login '!==' true)}}
-                        <span class="cart-item-value {{#if price_discounted}}price--discounted{{/if}}">{{price.formatted}}</span>
-                        {{#if price_discounted}}
-                            <span class="cart-item-value">{{price_discounted.formatted}}</span>
-                        {{/if}}
-                    {{else}}
-                        {{> components/common/login-for-pricing}}
-                    {{/or}}
-                </td>
+
 
                 <td class="cart-item-block cart-item-info cart-item-quantity">
 
@@ -85,7 +74,9 @@
                         {{#if can_modify}}
                             <button class="button button--icon" data-cart-update data-cart-itemid="{{id}}" data-action="dec">
                                 <span class="is-srOnly">{{lang 'products.quantity_decrease'}}</span>
-                                <i class="icon" aria-hidden="true"><svg><use xlink:href="#icon-keyboard-arrow-down" /></svg></i>
+                                <i class="icon" aria-hidden="true">
+                                    &ndash;
+                                </i>
                             </button>
                         {{/if}}
                         <input class="form-input form-input--incrementTotal cart-item-qty-input"
@@ -105,7 +96,9 @@
                         {{#if can_modify}}
                             <button class="button button--icon" data-cart-update data-cart-itemid="{{id}}" data-action="inc">
                                 <span class="is-srOnly">{{lang 'products.quantity_increase'}}</span>
-                                <i class="icon" aria-hidden="true"><svg><use xlink:href="#icon-keyboard-arrow-up" /></svg></i>
+                                <i class="icon" aria-hidden="true">
+                                    +
+                                </i>
                             </button>
                         {{/if}}
                     </div>

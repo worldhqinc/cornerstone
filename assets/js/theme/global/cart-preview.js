@@ -16,6 +16,7 @@ export default function (secureBaseUrl, cartId) {
     const $body = $('body');
 
     $body.on('cart-quantity-update', (event, quantity) => {
+        console.log('cart quantity clicked? ', event);
         $('.cart-quantity')
             .text(quantity)
             .toggleClass('countPill--positive', quantity > 0);
@@ -58,6 +59,7 @@ export default function (secureBaseUrl, cartId) {
     let quantity = 0;
 
     if (cartId) {
+        console.log('has cartID ', cartId);
         // Get existing quantity from localStorage if found
         if (utils.tools.storage.localStorageAvailable()) {
             if (localStorage.getItem('cart-quantity')) {
@@ -82,6 +84,7 @@ export default function (secureBaseUrl, cartId) {
             $body.trigger('cart-quantity-update', quantity);
         });
     } else {
+        console.log('has no cart id but has quantity? ', quantity);
         $body.trigger('cart-quantity-update', quantity);
     }
 }
